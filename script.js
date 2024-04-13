@@ -14,19 +14,35 @@ document.getElementById('noBtn').addEventListener('mouseover', function(event) {
 document.getElementById('yesBtn').addEventListener('click', function() {
     const catImage = document.getElementById('catImage');
     catImage.src = 'happy_cat.jpg'; // Erstat med den rigtige filsti til dit glade kattebillede.
-    catImage.style.display = 'block'; // Sikrer, at billedet vises hvis det tidligere var skjult.
 
-    // Skjul knapperne
-    document.getElementById('yesBtn').style.display = 'none';
-    document.getElementById('noBtn').style.display = 'none';
+    // Start fading out the cat image after 3 seconds
+    setTimeout(function() {
+        catImage.classList.add('fadeOut');
 
-    // Vis valgmulighederne
-    document.getElementById('options').style.display = 'block';
+        setTimeout(function() {
+            catImage.classList.add('hidden');
+            catImage.classList.remove('fadeOut');
+
+            // Display the options with fadeIn effect
+            const options = document.getElementById('options');
+            options.style.display = 'block';
+            document.getElementById('pickOne').classList.add('fadeIn');
+
+            setTimeout(function() {
+                const activityElements = document.querySelectorAll('.activity');
+                activityElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('fadeIn');
+                    }, 500 * (index + 1)); // Stagger the fade in for each option
+                });
+            }, 1000);
+        }, 1000);
+    }, 3000);
 });
 
 const options = document.querySelectorAll('.option');
 options.forEach(option => {
     option.addEventListener('click', function() {
-        alert('Great choice! Let me know what you chose!');  // Eller en mere avanceret handling, f.eks. åbning af en ny side eller formular.
+        alert('Great choice!');
     });
 });
