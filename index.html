@@ -18,16 +18,21 @@
             <p id="pickOne">Pick one:</p>
             <div class="activity">
                 <img src="coffee_walk.jpg" alt="Coffee Walk">
-                <button class="option">A walk with a coffee</button>
+                <button class="option" data-activity="Coffee Walk">A walk with a coffee</button>
             </div>
             <div class="activity">
                 <img src="bowling.jpg" alt="Bowling">
-                <button class="option">Bowling</button>
+                <button class="option" data-activity="Bowling">Bowling</button>
             </div>
             <div class="activity">
                 <img src="mini_golf.jpg" alt="Mini Golf">
-                <button class="option">Mini golf</button>
+                <button class="option" data-activity="Mini Golf">Mini golf</button>
             </div>
+        </div>
+        <div id="result" style="display: none;">
+            <img id="resultImage" src="" alt="Activity Image">
+            <p id="resultText"></p>
+            <p>Take a screenshot of your choice and send it to me!</p>
         </div>
     </div>
     <script src="script.js"></script>
