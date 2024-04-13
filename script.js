@@ -13,13 +13,13 @@ document.getElementById('noBtn').addEventListener('mouseover', function(event) {
 
 document.getElementById('yesBtn').addEventListener('click', function() {
     const catImage = document.getElementById('catImage');
-    catImage.src = 'happy_cat.jpg'; // Erstat med den rigtige filsti til dit glade kattebillede.
+    catImage.src = 'happy_cat.jpg'; // Erstat med den rigtige filsti til ditkattebillede.
     document.getElementById('options').style.display = 'block';
 });
 
 const options = document.querySelectorAll('.option');
 options.forEach(option => {
     option.addEventListener('click', function() {
-        alert('Great choice!');  // Eller en mere avanceret handling, f.eks. åbning af en ny side eller formular.
+        alert('Great choice! Tell me which one you chose!');  // Eller en mere avanceret handling, f.eks. åbning af en ny side eller formular.
     });
 });
