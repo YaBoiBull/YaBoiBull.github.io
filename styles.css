@@ -44,6 +44,7 @@ button:hover {
     margin: 10px;
     width: 30%;  /* Tilpasser bredden, så tre elementer kan passe ind side om side */
     vertical-align: top;  /* Holder elementerne topjusteret */
+    opacity: 0; /* Start hidden */
 }
 
 .activity img {
@@ -70,6 +71,29 @@ button:hover {
     height: auto;
     display: block;
     margin: 0 auto;  /* Centrerer billedet i containeren */
+}
+
+/* Animation Classes */
+.fadeIn {
+    animation: fadeInAnimation 1s forwards;
+}
+
+.fadeOut {
+    animation: fadeOutAnimation 1s forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOutAnimation {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 /* Responsiv styling til mindre skærme */
