@@ -36,7 +36,6 @@ document.getElementById('yesBtn').addEventListener('click', function() {
             const activityElements = document.querySelectorAll('.activity');
             activityElements.forEach((element, index) => {
                 setTimeout(() => {
-                    element.style.opacity = 0; // Sætter opacity til 0 for at forberede for fadeIn
                     element.classList.add('fadeIn');
                 }, 500 * (index + 1)); // Stagger the fade in for each option
             });
