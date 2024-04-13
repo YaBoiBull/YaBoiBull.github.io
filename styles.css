@@ -65,6 +65,13 @@ button:hover {
     background-color: #e0e0e0; /* Mørkere baggrundsfarve ved hover */
 }
 
+#catImage {
+    width: 50%;  /* Juster bredde som ønsket */
+    height: auto;
+    display: block;
+    margin: 0 auto;  /* Centrerer billedet i containeren */
+}
+
 /* Responsiv styling til mindre skærme */
 @media (max-width: 600px) {
     .activity {
@@ -85,4 +92,3 @@ button:hover {
         padding: 20px;       /* Tilføj lidt polstring til kanterne */
     }
 }
-
