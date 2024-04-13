@@ -32,14 +32,14 @@ document.getElementById('yesBtn').addEventListener('click', function() {
             options.style.display = 'block';
             document.getElementById('pickOne').classList.add('fadeIn');
 
-            setTimeout(function() {
-                const activityElements = document.querySelectorAll('.activity');
-                activityElements.forEach((element, index) => {
-                    setTimeout(() => {
-                        element.classList.add('fadeIn');
-                    }, 500 * (index + 1)); // Stagger the fade in for each option
-                });
-            }, 1000);
+            // Fading in each activity one by one
+            const activityElements = document.querySelectorAll('.activity');
+            activityElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = 0; // Sætter opacity til 0 for at forberede for fadeIn
+                    element.classList.add('fadeIn');
+                }, 500 * (index + 1)); // Stagger the fade in for each option
+            });
         }, 1000);
     }, 1500);
 });
