@@ -28,12 +28,12 @@ button:hover {
     background-color: lightblue;
 }
 
-#options {
+#options, #result {
     text-align: center;
-    display: none; /* Start hidden until Yes is clicked */
+    display: none; /* Start hidden until needed */
 }
 
-#pickOne {
+#pickOne, #resultText {
     margin-top: 20px;
     font-size: 20px;
     color: black;
@@ -44,7 +44,6 @@ button:hover {
     margin: 10px;
     width: 30%;  /* Tilpasser bredden, så tre elementer kan passe ind side om side */
     vertical-align: top;  /* Holder elementerne topjusteret */
-    opacity: 0; /* Start hidden */
 }
 
 .activity img {
@@ -71,6 +70,13 @@ button:hover {
     height: auto;
     display: block;
     margin: 0 auto;  /* Centrerer billedet i containeren */
+}
+
+#result img {
+    width: 50%;  /* Juster bredde som ønsket for aktivitetsbilleder */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centrerer billedet */
 }
 
 /* Animation Classes */
@@ -112,7 +118,7 @@ button:hover {
         font-size: 24px;     /* Mindre overskrift til mindre skærme */
     }
 
-    .content {
+    .content, #result {
         padding: 20px;       /* Tilføj lidt polstring til kanterne */
     }
 }
