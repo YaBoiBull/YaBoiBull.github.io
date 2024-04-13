@@ -28,25 +28,51 @@ button:hover {
     background-color: lightblue;
 }
 
-#options p {
+#options {
+    text-align: center;
+    display: none; /* Start hidden until Yes is clicked */
+}
+
+#pickOne {
     margin-top: 20px;
     font-size: 20px;
     color: black;
 }
 
+.activity {
+    display: inline-block;  /* Gør hver aktivitet til en inline-block for side-om-side layout */
+    margin: 10px;
+    width: 30%;  /* Tilpasser bredden, så tre elementer kan passe ind side om side */
+    vertical-align: top;  /* Holder elementerne topjusteret */
+}
+
+.activity img {
+    width: 100%;  /* Gør billedet til at fylde containerens bredde */
+    height: auto;  /* Bevarer billedets aspekt ratio */
+}
+
 .option {
-    padding: 10px 15px;
+    width: 100%;  /* Gør knappen til at fylde containerens bredde */
+    padding: 10px 0;  /* Tilpasset polstring for bedre udseende */
     font-size: 16px;
-    margin-top: 10px;
-    display: block;  /* Gør knapperne til block-elementer for at fylde hele bredden */
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;  /* Centrerer knapperne */
+    margin-top: 5px;
+    border: none;  /* Fjerner standard kant */
+    background-color: #f8f8f8; /* Lys baggrundsfarve for knapper */
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #e0e0e0; /* Mørkere baggrundsfarve ved hover */
 }
 
 /* Responsiv styling til mindre skærme */
 @media (max-width: 600px) {
-    button {
+    .activity {
+        width: 100%;  /* Gør hver aktivitet til at fylde hele skærmbredden på små enheder */
+        margin: 10px 0;  /* Justerer margin til vertikalt layout */
+    }
+
+    button, .option {
         padding: 15px 30px;  /* Større knapper til nemmere klik på små skærme */
         font-size: 18px;     /* Større tekst for bedre læsbarhed */
     }
@@ -56,6 +82,7 @@ button:hover {
     }
 
     .content {
-        padding: 20px;       /* Tilføjet lidt polstring til kanterne */
+        padding: 20px;       /* Tilføj lidt polstring til kanterne */
     }
 }
+
