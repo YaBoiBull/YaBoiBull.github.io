@@ -47,6 +47,15 @@ document.getElementById('yesBtn').addEventListener('click', function() {
 const options = document.querySelectorAll('.option');
 options.forEach(option => {
     option.addEventListener('click', function() {
-        alert('Great choice!');
+        const activityName = option.getAttribute('data-activity');
+        const imgSrc = option.previousElementSibling.src; // Henter billedet fra samme div som knappen
+
+        document.getElementById('options').style.display = 'none'; // Skjuler valgmuligheder
+        document.getElementById('resultImage').src = imgSrc;
+        document.getElementById('resultText').textContent = `You chose ${activityName}`;
+
+        const resultSection = document.getElementById('result');
+        resultSection.style.display = 'block';
+        resultSection.classList.add('fadeIn');
     });
 });
