@@ -44,7 +44,6 @@ button:hover {
     margin: 10px;
     width: 30%;  /* Tilpasser bredden, så tre elementer kan passe ind side om side */
     vertical-align: top;  /* Holder elementerne topjusteret */
-    opacity: 0; /* Start hidden */
 }
 
 .activity img {
@@ -67,7 +66,7 @@ button:hover {
 }
 
 #catImage {
-    width: 50%;  /* Juster bredde som ønsket */
+    width: 80%;  /* Juster bredde som ønsket */
     height: auto;
     display: block;
     margin: 0 auto;  /* Centrerer billedet i containeren */
@@ -100,7 +99,11 @@ button:hover {
 @media (max-width: 600px) {
     .activity {
         width: 100%;  /* Gør hver aktivitet til at fylde hele skærmbredden på små enheder */
-        margin: 10px 0;  /* Justerer margin til vertikalt layout */
+        margin: 0;  /* Justerer margin til vertikalt layout */
+    }
+
+    .activity img {
+        width: 100%; /* Sørger for at billederne ikke er for store på små enheder */
     }
 
     button, .option {
@@ -114,5 +117,6 @@ button:hover {
 
     .content {
         padding: 20px;       /* Tilføj lidt polstring til kanterne */
+        top: 30%; /* Juster positionen så indholdet ikke er for højt */
     }
 }
