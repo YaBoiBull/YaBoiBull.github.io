@@ -41,7 +41,7 @@ document.getElementById('yesBtn').addEventListener('click', function() {
                 });
             }, 1000);
         }, 1000);
-    }, 3000);
+    }, 1500);
 });
 
 const options = document.querySelectorAll('.option');
