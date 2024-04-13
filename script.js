@@ -47,6 +47,6 @@ document.getElementById('yesBtn').addEventListener('click', function() {
 const options = document.querySelectorAll('.option');
 options.forEach(option => {
     option.addEventListener('click', function() {
-        alert('Great choice! Tell me what you chose!');
+        alert('Great choice!');
     });
 });
