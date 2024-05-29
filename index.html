@@ -26,11 +26,11 @@
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 0 6px 3px white;
-    animation: float 10s infinite linear;
+    animation: float 10s linear;
   }
   @keyframes float {
-    from { transform: translateY(0px); }
-    to { transform: translateY(-100%); }
+    0% { top: -5px; } /* Starter lige over toppen af skærmen */
+    100% { top: 100vh; } /* Bevæger sig ned til bunden af skærmen */
   }
 </style>
 </head>
@@ -44,22 +44,17 @@ function createStar() {
   const star = document.createElement('div');
   star.classList.add('star');
   const xPosition = Math.random() * window.innerWidth;
-  const yPosition = window.innerHeight;
   star.style.left = `${xPosition}px`;
-  star.style.top = `${yPosition}px`;
+  star.style.top = `-5px`; // Starter lidt over skærmens top
 
   document.body.appendChild(star);
 
-  // Settling for a fixed animation duration
-  const animationDuration = 10000; // 10 seconds
-  star.style.animation = `float ${animationDuration}ms linear`;
-
   setTimeout(() => {
     star.remove();
-  }, animationDuration); // Removes the star after the animation completes
+  }, 10000); // Fjerner stjernen efter 10 sekunder
 }
 
-// Create a new star every second
+// Opretter en ny stjerne hvert sekund
 setInterval(createStar, 1000);
 </script>
 </body>
