@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>A little appreciation from me</title>
+<title>Animerede Stjerner og Tekst</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   body {
     margin: 0;
@@ -14,8 +15,8 @@
     align-items: center;
     color: white;
     text-align: center;
-    padding: 20px; /* Tilføjer lidt polstring rundt om teksten */
-    font-family: 'Arial', sans-serif; /* Definerer skrifttype for læsbarheden hehe */
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
     position: relative;
   }
   .star {
@@ -24,12 +25,12 @@
     height: 3px;
     background-color: white;
     border-radius: 50%;
-    box-shadow: 0 0 6px 3px white; /* Tilføjer glød til stjernerne, lidt charme du ved */
+    box-shadow: 0 0 6px 3px white;
     animation: float 10s infinite linear;
   }
   @keyframes float {
     from { transform: translateY(0px); }
-    to { transform: translateY(-1000px); }
+    to { transform: translateY(-100%); }
   }
 </style>
 </head>
@@ -49,13 +50,17 @@ function createStar() {
 
   document.body.appendChild(star);
 
+  // Settling for a fixed animation duration
+  const animationDuration = 10000; // 10 seconds
+  star.style.animation = `float ${animationDuration}ms linear`;
+
   setTimeout(() => {
     star.remove();
-  }, 10000); // Fjerner stjernen efter 10 sekunder
+  }, animationDuration); // Removes the star after the animation completes
 }
 
-// Opret en ny stjerne hvert sekund
-setInterval(createStar, 2000);
+// Create a new star every second
+setInterval(createStar, 1000);
 </script>
 </body>
 </html>
