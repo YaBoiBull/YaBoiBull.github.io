@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Animerede Blomster</title>
+<title>Animerede Stjerner og Tekst</title>
 <style>
   body {
     margin: 0;
@@ -16,14 +16,46 @@
     text-align: center;
     padding: 20px; /* Tilføjer lidt polstring rundt om teksten */
     font-family: 'Arial', sans-serif; /* Definerer skrifttype for læsbarhed */
+    position: relative;
+  }
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 3px white; /* Tilføjer glød til stjernerne */
+    animation: float 10s infinite linear;
+  }
+  @keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-1000px); }
   }
 </style>
 </head>
 <body>
-<div>
+<div style="position: relative; z-index: 1;">
     Even if it was just for a couple of seconds that you made me smile, I make dua that Allah سبحانه و تعالی fills your life with so much happiness and joy that you forget about any sadness you've ever faced in your life. May Allah سبحانه وتعالى grant you blessings for putting a smile on my face.<br><br>
     You're a blessing in my life.
 </div>
-<script src="script.js"></script>
+<script>
+function createStar() {
+  const star = document.createElement('div');
+  star.classList.add('star');
+  const xPosition = Math.random() * window.innerWidth;
+  const yPosition = window.innerHeight;
+  star.style.left = `${xPosition}px`;
+  star.style.top = `${yPosition}px`;
+
+  document.body.appendChild(star);
+
+  setTimeout(() => {
+    star.remove();
+  }, 10000); // Fjerner stjernen efter 10 sekunder
+}
+
+// Opret en ny stjerne hvert sekund
+setInterval(createStar, 1000);
+</script>
 </body>
 </html>
