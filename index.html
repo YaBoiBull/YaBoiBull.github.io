@@ -9,27 +9,21 @@
     height: 100vh;
     background-color: navy;
     overflow: hidden;
-  }
-  .flower {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: yellow;
-    box-shadow: 0 0 10px 2px white; /* Giver en effekt af kronbladene */
-    animation: float 5s infinite, fadeIn 2s forwards;
-  }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px; /* Tilføjer lidt polstring rundt om teksten */
+    font-family: 'Arial', sans-serif; /* Definerer skrifttype for læsbarhed */
   }
 </style>
 </head>
 <body>
+<div>
+    Even if it was just for a couple of seconds that you made me smile, I make dua that Allah سبحانه و تعالی fills your life with so much happiness and joy that you forget about any sadness you've ever faced in your life. May Allah سبحانه وتعالى grant you blessings for putting a smile on my face.<br><br>
+    You're a blessing in my life.
+</div>
 <script src="script.js"></script>
 </body>
 </html>
