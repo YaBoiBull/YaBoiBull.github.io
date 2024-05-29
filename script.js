@@ -1,63 +1,19 @@
-document.getElementById('noBtn').addEventListener('mouseover', moveButton);
-document.getElementById('noBtn').addEventListener('click', moveButton);
+function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('flower');
+  const xPosition = Math.random() * window.innerWidth;
+  const yPosition = Math.random() * window.innerHeight;
+  flower.style.left = `${xPosition}px`;
+  flower.style.top = `${yPosition}px`;
+  flower.style.animation = 'float 5s infinite, fadeIn 2s forwards';
 
-function moveButton(event) {
-    const button = event.target;
-    const buttonX = button.offsetLeft;
-    const buttonY = button.offsetTop;
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+  document.body.appendChild(flower);
 
-    // Beregn ny position baseret på musens position
-    const directionX = mouseX > buttonX ? -100 : 100;
-    const directionY = mouseY > buttonY ? -100 : 100;
-
-    // Anvend den nye position til knappen
-    button.style.transform = `translate(${directionX}px, ${directionY}px)`;
+  // Fjern blomsten efter animationen er fuldført for at forhindre ophobning i DOM'en
+  setTimeout(() => {
+    flower.remove();
+  }, 5000); // Samlet varighed af fadeIn + holdtid
 }
 
-document.getElementById('yesBtn').addEventListener('click', function() {
-    const catImage = document.getElementById('catImage');
-    catImage.src = 'happy_cat.jpg';
-
-    // Skjul "Yes" og "No" knapperne
-    document.getElementById('yesBtn').style.display = 'none';
-    document.getElementById('noBtn').style.display = 'none';
-
-    // Fade out the cat image and display options
-    setTimeout(function() {
-        catImage.classList.add('fadeOut');
-
-        setTimeout(function() {
-            catImage.style.display = 'none';
-            catImage.classList.remove('fadeOut');
-
-            const options = document.getElementById('options');
-            options.style.display = 'block';
-            document.getElementById('pickOne').classList.add('fadeIn');
-
-            const activityElements = document.querySelectorAll('.activity');
-            activityElements.forEach((element, index) => {
-                setTimeout(() => {
-                    element.classList.add('fadeIn');
-                }, 500 * (index + 1));
-            });
-        }, 1000);
-    }, 1500);
-});
-
-const options = document.querySelectorAll('.option');
-options.forEach(option => {
-    option.addEventListener('click', function() {
-        const activityName = option.getAttribute('data-activity');
-        const imgSrc = option.previousElementSibling.src;
-
-        document.getElementById('options').style.display = 'none';
-        document.getElementById('resultImage').src = imgSrc;
-        document.getElementById('resultText').textContent = `You chose ${activityName}`;
-
-        const resultSection = document.getElementById('result');
-        resultSection.style.display = 'block';
-        resultSection.classList.add('fadeIn');
-    });
-});
+// Opret en ny blomst hvert 4. sekund
+setInterval(createFlower, 4000);
